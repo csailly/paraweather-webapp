@@ -1,13 +1,22 @@
 ######################
 # Project Specific
 ######################
-/src/main/webapp/dist
+
 
 ######################
 # Node
 ######################
 /node/**
 /node_modules/**
+
+######################
+# Angular Js
+######################
+/bower_components/
+/node_modules/
+dist/
+coverage/
+.bowerrc
 
 ######################
 # SASS
@@ -29,9 +38,12 @@
 *~.nib
 local.properties
 .classpath
-.settings/**
+.settings/
 .loadpath
 /src/main/resources/rebel.xml
+*.tern-project
+*.jshintrc
+.editorconfig
 
 # External tool builders
 .externalToolBuilders/**
@@ -121,3 +133,4 @@ Desktop.ini
 # Gradle Wrapper
 ######################
 !gradle/wrapper/gradle-wrapper.jar
+
