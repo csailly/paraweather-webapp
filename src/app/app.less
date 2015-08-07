@@ -1,0 +1,125 @@
+.date {
+    border: 1px solid #0067a2;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    background-color: #0077bb;
+    color: #bbe6ff;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.site {
+    border: solid 1px rgb(191, 195, 198);
+    -moz-box-shadow: 5px 5px 5px 0px #656565;
+    -webkit-box-shadow: 5px 5px 5px 0px #656565;
+    -o-box-shadow: 5px 5px 5px 0px #656565;
+    box-shadow: 5px 5px 5px 0px #656565;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    .weather , .weatherDetails {
+        padding: 1rem;
+    }
+
+    .infosDetails , .weatherDetails {
+        border-top: solid 1px rgb(191, 195, 198);
+    }
+
+    .infosDetails a {
+        margin: 0 .2rem;
+    }
+
+    .infos {
+        display: flex;
+        justify-content: space-around;
+        background-color: rgb(242, 241, 238);
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        color: #0077bb;
+    }
+
+    .infosDetails {
+        display: flex;
+        flex-direction: column;
+        .section {
+            padding: 0.3rem 0.5rem;
+        }
+
+        div:nth-child(even) {
+            background: #EEE
+        }
+
+        .landing , .take-off {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .weather {
+        border-top: solid 1px rgb(191, 195, 198);
+        display: flex;
+        justify-content: space-around;
+        background-color: rgb(242, 241, 238);
+        .time {
+            border-radius: 2rem;
+            height: 2rem;
+            width: 25%;
+            margin: 0 1rem;
+        }
+
+        .level1 {
+            background-color: red;
+        }
+
+        .level2 {
+            background-color: orange;
+        }
+
+        .level3 {
+            background-color: green;
+        }
+    }
+
+    .weatherDetails {
+        .column {
+            display: flex;
+            flex-direction: column;
+            border-bottom: solid 1px rgb(191, 195, 198);
+            border-radius: 5px;
+            .row {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                padding: 2px;
+                .cell {
+                    flex: 1;
+                    text-align: center;
+                }
+
+                &.header {
+                    border-bottom: solid 1px rgb(191, 195, 198);
+                }
+            }
+
+            > div:nth-child(even) {
+                background: #EEE
+            }
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    color: grey;
+    border-bottom: solid 1px rgb(191, 195, 198);
+    border-right: solid 1px rgb(191, 195, 198);
+    border-radius: 5px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-bottom: 1px;
+}
+
+.fa , .icon {
+    padding: 0 0.2rem;
+}
+
