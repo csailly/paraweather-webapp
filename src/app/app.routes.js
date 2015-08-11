@@ -16,7 +16,7 @@ angular.module('siteWeather').config(
 				}
 			}).state(DEFAULT_STATE_NAME, {
 				url : 'default'
-			})
+			});
 
 			// Redirection to the default state using the injector to avoid
 			// 'Error: [$rootScope:infdig] 10 $digest() iterations reached.

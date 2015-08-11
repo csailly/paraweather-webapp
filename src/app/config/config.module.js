@@ -1,7 +1,5 @@
-angular.module("ds.config", ["restangular","ngNumeraljs"])
+angular.module("siteWeather.config", ["restangular"])
 
 .constant("apiBaseUrl", undefined)
-
-.constant("casUrl", undefined)
 
 ;
