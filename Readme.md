@@ -1,23 +1,3 @@
-serve
-serve:local
-serve:prod
-    constants
-    watch
-        partials:clean
-        cssfonts
-        inject
-            scripts
-                constants
-            styles
-serve:dist  
-    build
-        cssfonts
-        styles
-        partials
-            partials:clean
-        html
-            inject:dist
-test
-    scripts
-test:auto
-    scripts
+# ParaWeatherFrontend
+
+
