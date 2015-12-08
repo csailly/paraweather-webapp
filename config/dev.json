@@ -1,0 +1,5 @@
+{
+    "appConfig": {
+        "apiBaseUrl": "http://api.pilot.dev.fr.auchan.com:8080"
+    }
+}

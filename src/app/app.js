@@ -3,6 +3,7 @@ angular.module('siteWeather', [
     'ui.router',
     //'restangular',
     // Internal dependencies
-    'siteWeather.main',
-    'siteWeather.config'
+    'siteWeather.views',
+    'siteWeather.services',
+    'siteWeather.configs'
 ]);
