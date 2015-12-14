@@ -32,5 +32,5 @@
             $state.go(DEFAULT_STATE_NAME);
         });
 
-    };
+    }
 })();

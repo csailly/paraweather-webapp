@@ -10,10 +10,10 @@ module.exports = function (options) {
             return gulp.src('./config/dev.json')
                 .pipe($.ngConstant({
                     name: 'siteWeather.configs',
-                    dest: "constants.config.js"
+                    deps: false
                 }))
+                .pipe(rename('constants.config.js'))
                 .pipe(gulp.dest('src/app/configs/'));
         }
     );
-}
-;
+};
