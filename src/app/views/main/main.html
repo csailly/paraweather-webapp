@@ -1,17 +1,17 @@
         <div>
             SiteWeather - Beta
         </div>
+
+        <date-selector dates="mainController.dates"></date-selector>
+
         <div ng-repeat="(key, values) in mainController.datas">
-            <div class="date">
-                <span>{{values.date}}</span>
-            </div>
             <div class="site" ng-repeat="siteValues in values.datas">
                 <div class="infos"  ng-click="mainController.toggleSiteDetails()">
                     <span class="label">{{siteValues.site.label}}</span>
                 </div>
                 <div class="infosDetails" ng-show="mainController.showSiteDetails">
-                    <div class="section">
-                        <span><img src="blueLevel.png" style="width: 20px;"/></span>
+                    <div class="section level">
+                        <span><img src="/assets/images/paragliding.svg" class="level-blue"/></span>
                     </div>
                     <div class="section">
                         <span><i class="ion-android-compass icon"></i>WNW-W, NW</span>
@@ -69,10 +69,10 @@
                     </div>
                 </div>
                 <div class="weather" ng-click="mainController.toggleWeatherDetails()">
-                    <div class="time level1">11h</div>
-                    <div class="time level2">14h</div>
-                    <div class="time level1">17h</div>
-                    <div class="time level3">20h</div>
+                    <div class="time level1"><div>11h</div></div>
+                    <div class="time level2"><div>14h</div></div>
+                    <div class="time level1"><div>17h</div></div>
+                    <div class="time level3"><div>20h</div></div>
                 </div>
                 <div class="weatherDetails" ng-show="mainController.showWeatherDetails">
                     <!-- Marée haute => icone vagues / baigneur
