@@ -2,10 +2,8 @@
     SiteWeather - Beta
 </div>
 
-<date-selector dates="mainController.dates"></date-selector>
+<date-selector dates="main.dates"></date-selector>
 
-<div ng-repeat="(key, values) in mainController.datas">
-    <site-card site-datas="siteValues.site"
-               weather-datas="siteValues.weather"
-               ng-repeat="siteValues in values.datas"></site-card>
-</div>
+<site-card site-datas="site"
+           weather-datas="siteValues.weather"
+           ng-repeat="site in main.sites"></site-card>

@@ -9,7 +9,7 @@
             restrict: 'E',
             replace: true,
             templateUrl: 'app/directives/dateSelector/dateSelector.html',
-            controller: 'dateSelectorController',
+            controller: 'DateSelectorController',
             controllerAs : 'dateSelector',
             scope: {
                 dates : '='

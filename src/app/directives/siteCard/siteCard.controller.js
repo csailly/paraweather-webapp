@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('siteWeather.directives')
-        .controller('siteCardController', siteCardController);
+        .controller('SiteCardController', siteCardController);
 
     function siteCardController($log){
         var vm = this;

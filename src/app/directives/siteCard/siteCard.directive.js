@@ -10,7 +10,7 @@
             restrict: 'E',
             replace: true,
             templateUrl: 'app/directives/siteCard/siteCard.html',
-            controller: 'siteCardController',
+            controller: 'SiteCardController',
             controllerAs: 'siteCard',
             scope: {
                 siteDatas: '=',

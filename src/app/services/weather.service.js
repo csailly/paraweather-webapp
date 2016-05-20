@@ -4,17 +4,17 @@
 angular.module('siteWeather.services')
     .factory('weatherService', weatherService);
 
-function weatherService(siteApiService) {
+function weatherService(weatherApiService) {
 
     var service = {
-        readAll: readAll
+        getBySiteIdAndDate: getBySiteIdAndDate
     };
 
     return service;
 
 
-    function readAll() {
-        return siteApiService.readAll();
+    function getBySiteIdAndDate(siteId, date) {
+        return weatherApiService.getBySiteIdAndDate(siteId, date);
     }
 }
 })();

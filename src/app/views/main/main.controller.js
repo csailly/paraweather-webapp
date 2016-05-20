@@ -4,11 +4,8 @@
     angular.module('siteWeather.views')
         .controller('MainController', MainController);
 
-    function MainController($log, weatherService, calendarService) {
+    function MainController($log, $q, $stateParams, weatherService, siteService, calendarService) {
         var vm = this;
-
-        vm.datas;
-        vm.dates;
 
         vm.showSiteDetails = false;
         vm.showWeatherDetails = false;
@@ -20,11 +17,22 @@
         //---------------------------
 
         function activate() {
-            vm.datas = weatherService.readAll();
-            $log.info("Weather datas => ",vm.datas);
-            vm.dates = calendarService.getDates();
-            $log.info("Dates => ",vm.dates);
+            $q.all([calendarService.getDates(), siteService.getSites()])
+                .then(function (datas) {
+                    vm.dates = datas[0];
+                    $log.info("Dates => ", vm.dates);
+                    vm.sites = datas[1];
+                    $log.info("Sites => ", vm.sites);
 
+                    vm.siteWeather = {};
+                    _.each(vm.sites, function (site) {
+                        weatherService.getBySiteIdAndDate(site.id, $stateParams["day"])
+                            .then(function(weather){
+                                vm.siteWeather[site.id] = weather;
+                            })
+                    });
+
+                });
         }
 
         function toggleSiteDetails() {

@@ -1,31 +1,31 @@
-(function(){
-  'use strict';
+(function () {
+    'use strict';
 
-  angular.module('siteWeather.services')
-      .factory('calendarApiService', calendarApiService);
+    angular.module('siteWeather.services')
+        .factory('calendarApiService', calendarApiService);
 
 
-      function calendarApiService() {
+    function calendarApiService($q) {
 
-          var service = {
-              getDates: getDates
-          };
+        var service = {
+            getDates: getDates
+        };
 
-          return service;
+        return service;
 
-          //-----------------------------------
+        //-----------------------------------
 
-          function getDates(){
-            return {
-              "0" : "18/05/2016",
-              "1" : "19/05/2016",
-              "2" : "20/05/2016",
-              "3" : "21/05/2016",
-              "4" : "22/05/2016",
-              "5" : "23/05/2016",
-              "6" : "24/05/2016",
-            }
-          }
+        function getDates() {
+            return $q.when({
+                "0": "18/05/2016",
+                "1": "19/05/2016",
+                "2": "20/05/2016",
+                "3": "21/05/2016",
+                "4": "22/05/2016",
+                "5": "23/05/2016",
+                "6": "24/05/2016"
+            });
         }
+    }
 
 })();

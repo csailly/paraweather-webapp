@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('siteWeather.directives')
-        .controller('dateSelectorController', dateSelectorController);
+        .controller('DateSelectorController', dateSelectorController);
 
     function dateSelectorController($log, $state, $stateParams) {
         var vm = this;

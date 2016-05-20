@@ -16,7 +16,7 @@
                     '': {
                         templateUrl: 'app/views/main/main.html',
                         controller: 'MainController',
-                        controllerAs: 'mainController'
+                        controllerAs: 'main'
                     }
                 }
             })
