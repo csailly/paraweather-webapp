@@ -4,6 +4,7 @@ angular.module('siteWeather', [
     //'restangular',
     // Internal dependencies
     'siteWeather.configs',
+    'siteWeather.directives',
     'siteWeather.views',
     'siteWeather.services'
 ]);

@@ -1,14 +1,14 @@
 (function () {
     'use strict';
 
-    angular.module('siteWeather.views')
+    angular.module('siteWeather.directives')
         .directive('dateSelector', dateSelectorDirective);
 
     function dateSelectorDirective() {
         return {
             restrict: 'E',
             replace: true,
-            templateUrl: 'app/views/dateSelector/dateSelector.html',
+            templateUrl: 'app/directives/dateSelector/dateSelector.html',
             controller: 'dateSelectorController',
             controllerAs : 'dateSelector',
             scope: {

@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('siteWeather.views')
+    angular.module('siteWeather.directives')
         .directive('siteCard', siteCardDirective);
 
 
@@ -9,7 +9,7 @@
         return {
             restrict: 'E',
             replace: true,
-            templateUrl: 'app/views/siteCard/siteCard.html',
+            templateUrl: 'app/directives/siteCard/siteCard.html',
             controller: 'siteCardController',
             controllerAs: 'siteCard',
             scope: {

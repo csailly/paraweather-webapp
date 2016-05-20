@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('siteWeather.views')
+    angular.module('siteWeather.directives')
         .controller('dateSelectorController', dateSelectorController);
 
     function dateSelectorController($log, $state, $stateParams) {
