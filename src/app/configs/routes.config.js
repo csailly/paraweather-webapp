@@ -32,14 +32,7 @@
                 }
             })
             .state('root.day', {
-                url: 'day/{day}',
-                views: {
-                    '': {
-                        templateUrl: 'app/views/main/main.html',
-                        controller: 'MainController',
-                        controllerAs: 'mainController'
-                    }
-                }
+                url: 'day/{day}'
             })
         ;
 
