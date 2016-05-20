@@ -8,19 +8,40 @@
         var DEFAULT_STATE_NAME = 'root.default';
 
         $urlRouterProvider.when('/', '/default');
-        $stateProvider.state('root', {
-            abstract: true,
-            url: '/',
-            views: {
-                '': {
-                    templateUrl: 'app/views/main/main.html',
-                    controller: 'MainController',
-                    controllerAs: 'mainController'
+        $stateProvider
+            .state('root', {
+                abstract: true,
+                url: '/',
+                views: {
+                    '': {
+                        templateUrl: 'app/views/main/main.html',
+                        controller: 'MainController',
+                        controllerAs: 'mainController'
+                    }
                 }
-            }
-        }).state(DEFAULT_STATE_NAME, {
-            url: 'default'
-        });
+            })
+            .state(DEFAULT_STATE_NAME, {
+                url: 'default',
+                onEnter: function ($log, $state, defaultParams) {
+                    $state.go('root.day', defaultParams);
+                },
+                resolve: {
+                    defaultParams: function () {
+                        return {day: 0};
+                    }
+                }
+            })
+            .state('root.day', {
+                url: 'day/{day}',
+                views: {
+                    '': {
+                        templateUrl: 'app/views/main/main.html',
+                        controller: 'MainController',
+                        controllerAs: 'mainController'
+                    }
+                }
+            })
+        ;
 
         // Redirection to the default state using the injector to avoid
         // 'Error: [$rootScope:infdig] 10 $digest() iterations reached.
