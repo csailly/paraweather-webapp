@@ -5,5 +5,5 @@
 <date-selector dates="main.dates"></date-selector>
 
 <site-card site-datas="site"
-           weather-datas="siteValues.weather"
+           weather-datas="main.siteWeather[site.id]"
            ng-repeat="site in main.sites"></site-card>
