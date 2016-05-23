@@ -17,7 +17,7 @@
                 weatherDatas: '='
             },
             bindToController: true
-        }
+        };
     }
 
 

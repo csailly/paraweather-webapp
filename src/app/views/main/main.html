@@ -1,9 +1,15 @@
-<div>
-    SiteWeather - Beta
+<div class="app">
+    <div class="header">
+        <date-selector dates="main.dates"></date-selector>
+    </div>
+
+    <div class="content">
+        <site-card site-datas="site"
+                   weather-datas="main.siteWeather[site.id]"
+                   ng-repeat="site in main.sites"></site-card>
+    </div>
+
+    <div class="footer"></div>
 </div>
 
-<date-selector dates="main.dates"></date-selector>
 
-<site-card site-datas="site"
-           weather-datas="main.siteWeather[site.id]"
-           ng-repeat="site in main.sites"></site-card>

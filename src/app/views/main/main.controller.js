@@ -26,10 +26,10 @@
 
                     vm.siteWeather = {};
                     _.each(vm.sites, function (site) {
-                        weatherService.getBySiteIdAndDate(site.id, $stateParams["day"])
+                        weatherService.getBySiteIdAndDate(site.id, $stateParams.day)
                             .then(function(weather){
                                 vm.siteWeather[site.id] = weather;
-                            })
+                            });
                     });
 
                 });

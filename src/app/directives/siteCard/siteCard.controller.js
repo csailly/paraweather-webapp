@@ -15,7 +15,7 @@
 
         //--------------------------
         function activate(){
-            $log.debug("Init siteCard with ", vm.siteDatas, vm.weatherDatas)
+            $log.debug("Init siteCard with ", vm.siteDatas, vm.weatherDatas);
         }
 
         function toggleSiteDetails(){
