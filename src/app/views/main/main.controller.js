@@ -4,7 +4,7 @@
     angular.module('siteWeather.views')
         .controller('MainController', MainController);
 
-    function MainController($log, $q, $stateParams, weatherService, siteService, calendarService, flyabilityService) {
+    function MainController($log, $q, $state, $stateParams, weatherService, siteService, calendarService, flyabilityService) {
         var vm = this;
 
         vm.showSiteDetails = false;
@@ -28,12 +28,13 @@
                     vm.siteFlyability = {};
 
                     _.each(vm.sites, function (site) {
-                        weatherService.getBySiteIdAndDate(site.id, $stateParams.day)
-                            .then(function(weather){
+                        var date = moment().add($state.params.day, 'days').format('YYYYMMDD');
+                        weatherService.getByDateAndLocation(date, site.coordinates.latitude, site.coordinates.longitude)
+                            .then(function (weather) {
                                 vm.siteWeather[site.id] = weather;
                             })
-                            .then(function(){
-                              vm.siteFlyability[site.id] = flyabilityService.getFlyability(site, vm.siteWeather[site.id].weather);
+                            .then(function () {
+                                vm.siteFlyability[site.id] = flyabilityService.getFlyability(site, vm.siteWeather[site.id]);
                             });
                     });
 

@@ -1,7 +1,7 @@
 angular.module('siteWeather', [
     // External dependencies
     'ui.router',
-    //'restangular',
+    'restangular',
     // Internal dependencies
     'siteWeather.configs',
     'siteWeather.directives',

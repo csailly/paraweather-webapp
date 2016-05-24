@@ -19,13 +19,11 @@
         function activate() {
             $log.debug("Init dateSelectorController with dates :", vm.dates);
             if (vm.dates[$stateParams.day]) {
-                vm.currentDate = vm.dates[$stateParams.day];
+                vm.currentDate = moment().add($stateParams.day, 'days').format('dddd DD-MM-YYYY');
             } else {
                 $log.info("Invalid day param, use default one");
                 reload(0);
             }
-
-            vm.currentDate = vm.dates[$stateParams.day] || vm.dates[0];
         }
 
         function hasPrevious() {

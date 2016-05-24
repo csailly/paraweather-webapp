@@ -72,7 +72,7 @@
     <div class="weather" ng-click="siteCard.toggleWeatherDetails()">
         <div class="time" ng-class="['level'+siteCard.flyabilityDatas.threeHoursForecast[datas.hour].level,
                      siteCard.flyabilityDatas.threeHoursForecast[datas.hour].gust ? '': 'gusty']"
-             data-ng-repeat="datas in siteCard.weatherDatas.weather.threeHoursForecast">
+             data-ng-repeat="datas in siteCard.weatherDatas.threeHoursForecast">
             <div>{{::datas.hour}}h</div>
         </div>
     </div>
@@ -89,7 +89,7 @@
                 <div class="cell"><i class="wi wi-thermometer-exterior"></i><i class="wi wi-celsius icon"></i></div>
                 <div class="cell"><i class="ion-waterdrop icon"></i>mm</div>
             </div>
-            <div class="row" data-ng-repeat="datas in siteCard.weatherDatas.weather.threeHoursForecast">
+            <div class="row" data-ng-repeat="datas in siteCard.weatherDatas.threeHoursForecast">
                 <div class="cell hour"
                      ng-class="['level'+siteCard.flyabilityDatas.threeHoursForecast[datas.hour].level,
                      siteCard.flyabilityDatas.threeHoursForecast[datas.hour].gust ? '': 'gusty']">

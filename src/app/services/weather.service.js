@@ -1,20 +1,20 @@
 (function () {
     'use strict';
 
-angular.module('siteWeather.services')
-    .factory('weatherService', weatherService);
+    angular.module('siteWeather.services')
+        .factory('weatherService', weatherService);
 
-function weatherService(weatherApiService) {
+    function weatherService(weatherApiService) {
 
-    var service = {
-        getBySiteIdAndDate: getBySiteIdAndDate
-    };
+        var service = {
+            getByDateAndLocation: getByDateAndLocation
+        };
 
-    return service;
+        return service;
 
 
-    function getBySiteIdAndDate(siteId, date) {
-        return weatherApiService.getBySiteIdAndDate(siteId, date);
+        function getByDateAndLocation(date, lat, lng) {
+            return weatherApiService.getByDateAndLocation(date, lat, lng);
+        }
     }
-}
 })();

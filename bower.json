@@ -9,11 +9,19 @@
     "lodash": "~4.12.0",
     "weather-icons": "~2.0.10",
     "angular-ui-router": "~0.3",
-    "restangular": "~1.5.2"
+    "restangular": "~1.5.2",
+    "moment": "~2.13.0"
   },
   "devDependencies": {},
   "resolutions": {
     "lodash": "~4.12.0",
     "angular": "~1.5.0"
+  },
+  "overrides": {
+    "moment": {
+      "main": [
+        "moment.js", "locale/fr.js"
+      ]
+    }
   }
 }
