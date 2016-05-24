@@ -71,26 +71,31 @@
         background-color: rgb(242, 241, 238);
         .time {
             display: flex;
-            border-radius: 2rem;
-            height: 2rem;
-            width: 25%;
-            margin: 0 1rem;
+            border-radius: 2em;
+            height: 2em;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 0;
+            margin: 0 .1em;
 
             div {
                 margin: auto;
             }
         }
 
-        .level1 {
+        .level0 {
             background-color: red;
         }
 
-        .level2 {
+        .level1 {
             background-color: orange;
         }
 
-        .level3 {
+        .level2 {
             background-color: green;
+            &.gusty{
+                background-color: purple;
+            }
         }
     }
 
@@ -109,7 +114,40 @@
                 .cell {
                     flex: 1;
                     text-align: center;
+                    margin: 0 2px;
+                    border-radius: 5px;
+
+                    &.hour {
+                        &.level0 {
+                            background-color: red;
+                        }
+
+                        &.level1 {
+                            background-color: orange;
+                        }
+
+                        &.level2 {
+                            background-color: green;
+
+                            &.gusty{
+                                background-color: purple;
+                            }
+                        }
+                    }
+
+                    &.wind-direction, &.wind-speed, &.wind-gust {
+                        &.good {
+                            background-color: green;
+                        }
+
+                        &.bad {
+                            background-color: red;
+                        }
+                    }
+
                 }
+
+
 
                 &.header {
                     border-bottom: solid 1px rgb(191, 195, 198);

@@ -239,7 +239,7 @@
                             "weatherLabel": "Ciel couvert",
                             "temperature": 17.0,
                             "windChill": 14.0,
-                            "windDirection": "N",
+                            "windDirection": "NW",
                             "windSpeed": 17.0,
                             "windGust": 21.0,
                             "precips": "-"
@@ -280,7 +280,7 @@
                             "temperature": 12.0,
                             "windChill": 10.0,
                             "windDirection": "NW",
-                            "windSpeed": 9.0,
+                            "windSpeed": 17.0,
                             "windGust": 25.0,
                             "precips": "-"
                         },
@@ -299,8 +299,8 @@
                             "weatherLabel": "Partiellement nuageux et quelques cirrus",
                             "temperature": 17.0,
                             "windChill": 14.0,
-                            "windDirection": "N",
-                            "windSpeed": 19.0,
+                            "windDirection": "NW",
+                            "windSpeed": 23.0,
                             "windGust": 20.0,
                             "precips": "-"
                         }

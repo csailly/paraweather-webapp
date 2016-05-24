@@ -14,7 +14,8 @@
             controllerAs: 'siteCard',
             scope: {
                 siteDatas: '=',
-                weatherDatas: '='
+                weatherDatas: '=',
+                flyabilityDatas: '='
             },
             bindToController: true
         };

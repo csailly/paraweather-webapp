@@ -7,10 +7,10 @@
             <span><img src="/assets/images/paragliding.svg" class="level-blue"/></span>
         </div>
         <div class="section">
-            <span><i class="ion-android-compass icon"></i>WNW-W, NW</span>
+            <span><i class="ion-android-compass icon"></i>??</span>
         </div>
         <div class="section">
-            <span><i class="ion-flag icon"></i>17-25</span>
+            <span><i class="ion-flag icon"></i>??</span>
         </div>
         <div class="section">
             <i class="ion-android-pin icon"></i>
@@ -70,7 +70,9 @@
         </div>
     </div>
     <div class="weather" ng-click="siteCard.toggleWeatherDetails()">
-        <div class="time level2" data-ng-repeat="datas in siteCard.weatherDatas.weather.threeHoursForecast">
+        <div class="time" ng-class="['level'+siteCard.flyabilityDatas.threeHoursForecast[datas.hour].level,
+                     siteCard.flyabilityDatas.threeHoursForecast[datas.hour].gust ? '': 'gusty']"
+             data-ng-repeat="datas in siteCard.weatherDatas.weather.threeHoursForecast">
             <div>{{::datas.hour}}h</div>
         </div>
     </div>
@@ -88,11 +90,20 @@
                 <div class="cell"><i class="ion-waterdrop icon"></i>mm</div>
             </div>
             <div class="row" data-ng-repeat="datas in siteCard.weatherDatas.weather.threeHoursForecast">
-                <div class="cell"><span>{{::datas.hour}}h</span></div>
-                <div class="cell"><i class="wi wi-wind {{::'wi-towards-'+datas.windDirection | lowercase}}"></i>{{::datas.windDirection}}
+                <div class="cell hour"
+                     ng-class="['level'+siteCard.flyabilityDatas.threeHoursForecast[datas.hour].level,
+                     siteCard.flyabilityDatas.threeHoursForecast[datas.hour].gust ? '': 'gusty']">
+                    <span>{{::datas.hour}}h</span></div>
+                <div class="cell wind-direction"
+                     ng-class="siteCard.flyabilityDatas.threeHoursForecast[datas.hour].direction ? 'good' : 'bad'">
+                    <i class="wi wi-wind" ng-class="'wi-towards-'+datas.windDirection | lowercase"></i>{{::datas.windDirection}}
                 </div>
-                <div class="cell"><span>{{::datas.windSpeed}}</span></div>
-                <div class="cell"><span>{{::datas.windGust}}</span></div>
+                <div class="cell wind-speed"
+                     ng-class="+siteCard.flyabilityDatas.threeHoursForecast[datas.hour].speed ? 'good' : 'bad'"><span>{{::datas.windSpeed}}</span>
+                </div>
+                <div class="cell wind-gust"
+                     ng-class="siteCard.flyabilityDatas.threeHoursForecast[datas.hour].gust ? 'good' : 'bad'"><span>{{::datas.windGust}}</span>
+                </div>
                 <div class="cell"><i class="wi wi-day-cloudy"></i>{{::datas.weatherLabel}}</div>
                 <div class="cell"><span>{{::datas.temperature}}</span></div>
                 <div class="cell"><span>{{::datas.precips}}</span></div>

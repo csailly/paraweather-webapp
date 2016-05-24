@@ -27,7 +27,7 @@
                         },
                         "takeoffs": [{
                             "label": "Ouest",
-                            "directions": {"min": "WNW", "max": "W"},
+                            "directions": {"min": "W", "max": "WNW"},
                             "coordinates": {"latitude": "", "longitude": ""},
                             "wind": {"min": 17, "max": 22},
                             "camera": "http://foo.bar.com"
@@ -135,7 +135,7 @@
                         },
                         "takeoffs": [{
                             "label": "Ouest",
-                            "directions": {"min": "WNW", "max": "W"},
+                            "directions": {"min": "W", "max": "WNW"},
                             "coordinates": {"latitude": "", "longitude": ""},
                             "wind": {"min": 17, "max": 22},
                             "camera": "http://foo.bar.com"
