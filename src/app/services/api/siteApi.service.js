@@ -39,8 +39,8 @@
                                 "longitude": ""
                             },
                             "wind": {
-                                "min": 17,
-                                "max": 22
+                                "min": 13,
+                                "max": 25
                             },
                             "camera": "http://foo.bar.com"
                         },
@@ -55,8 +55,8 @@
                                 "longitude": ""
                             },
                             "wind": {
-                                "min": 17,
-                                "max": 22
+                                "min": 13,
+                                "max": 25
                             }
                         }
                     ],

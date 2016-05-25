@@ -1,6 +1,7 @@
 <div class="site-card">
     <div class="infos" ng-click="siteCard.toggleSiteDetails()">
-        <span class="label">{{siteCard.siteDatas.label}}</span>
+        <span class="site-label">{{siteCard.siteDatas.label}}</span>
+        <span class="last-update-time">{{siteCard.weatherDatas.lastUpdateTime}}</span>
     </div>
     <div class="infos-details" ng-show="siteCard.showSiteDetails">
         <div class="section level">

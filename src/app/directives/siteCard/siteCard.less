@@ -30,11 +30,21 @@
 
     .infos {
         display: flex;
-        justify-content: space-around;
+        flex-direction: column;
         background-color: rgb(242, 241, 238);
-        font-size: 1.5rem;
+
         padding: 0.5rem;
         color: #0077bb;
+
+        .site-label {
+            margin: auto;
+            font-size: 1.5rem;
+        }
+
+        .last-update-time {
+            align-self: flex-end;
+        }
+
     }
 
     .infos-details {
