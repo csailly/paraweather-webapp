@@ -1,7 +1,10 @@
 angular.module("siteWeather.configs")
 
 .constant("appConfig", {
-	"apiBaseUrl": "http://api.pilot.dev.fr.auchan.com:8080"
+	"api": {
+		"baseUrl": "http://localhost:8080/api",
+		"version": "v1"
+	}
 })
 
 ;

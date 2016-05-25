@@ -7,7 +7,7 @@
 
     function SiteRestangular(Restangular, appConfig) {
         return Restangular.withConfig(function (RestangularConfigurer) {
-            RestangularConfigurer.setBaseUrl(appConfig.apiBaseUrl + '/v1/site/');
+            RestangularConfigurer.setBaseUrl(appConfig.api.baseUrl + '/v1/site/');
             RestangularConfigurer.setDefaultHttpFields({cache: true});
         });
     }

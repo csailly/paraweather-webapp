@@ -17,13 +17,13 @@
         function getByDateAndLocation(date, lat, lng) {
             return Restangular
                 .one('forecast')
-                .one('date')
-                .one(date)
+                .one('byLocation')
                 .one('lat')
                 .one(lat)
                 .one('lng')
                 .one(lng)
-                .one('/')
+                .one('date')
+                .one(date)
                 .get();
         }
     }
