@@ -24,8 +24,8 @@
             'W': 270,
             'WNW': 292.5,
             'NW': 315,
-            'NNW': 337.5,
-        }
+            'NNW': 337.5
+        };
 
         return service;
 
@@ -47,7 +47,7 @@
                         checkWindSpeed(datas.windSpeed, datas.windGust, takeoff.wind.min, takeoff.wind.max);
 
                     flyability.hourlyForecast[hour].gust = flyability.hourlyForecast[hour].gust ||
-                        checkWindGust(datas.windGust, takeoff.wind.min, takeoff.wind.max);
+                        checkWindGust(datas.windGust, takeoff.wind.max);
 
                 });
 
@@ -82,8 +82,6 @@
                 }
             });
 
-            console.log(flyability);
-
             return flyability;
         }
 
@@ -96,8 +94,8 @@
             return windSpeed >= minWindValue && windSpeed <= maxWindValue;
         }
 
-        function checkWindGust(windGust, minWindValue, maxWindValue) {
-            return windGust >= minWindValue && windGust <= maxWindValue;
+        function checkWindGust(windGust, maxWindValue) {
+            return windGust <= maxWindValue;
         }
     }
 })();

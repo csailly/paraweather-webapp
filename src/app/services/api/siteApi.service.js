@@ -20,12 +20,18 @@
                     "label": "La Comté",
                     "level": 1,
                     "coordinates": {
-                        "latitude": "50.43N",
-                        "longitude": "2.49E"
+                        "latitude": "50.416804",
+                        "longitude": "2.513119"
                     },
                     "beacon": {
                         "url": "http://www.balisemeteo.com/balise.php?idBalise=166",
                         "label": "La Comté"
+                    },
+                    "park": {
+                        "coordinates": {
+                            "latitude": " 50.415904",
+                            "longitude": "2.511599"
+                        }
                     },
                     "takeoffs": [
                         {
@@ -35,8 +41,8 @@
                                 "max": "WNW"
                             },
                             "coordinates": {
-                                "latitude": "",
-                                "longitude": ""
+                                "latitude": "50.416804",
+                                "longitude": "2.513119"
                             },
                             "wind": {
                                 "min": 13,
@@ -51,8 +57,8 @@
                                 "max": "NW"
                             },
                             "coordinates": {
-                                "latitude": "",
-                                "longitude": ""
+                                "latitude": "50.417486",
+                                "longitude": "2.513862"
                             },
                             "wind": {
                                 "min": 13,
@@ -68,8 +74,8 @@
                                 "max": "W"
                             },
                             "coordinates": {
-                                "latitude": "",
-                                "longitude": ""
+                                "latitude": "50.416733",
+                                "longitude": "2.511892"
                             },
                             "camera": "http://foo.bar.com"
                         }
@@ -98,8 +104,8 @@
                         "label": "Olhain",
                         "level": 1,
                         "coordinates": {
-                            "latitude": "50.4334N",
-                            "longitude": "2.5857E"
+                            "latitude": "50.433433",
+                            "longitude": "2.585734"
                         },
                         "beacon": {
                             "url": "",
@@ -113,8 +119,8 @@
                                     "max": "SSW"
                                 },
                                 "coordinates": {
-                                    "latitude": "",
-                                    "longitude": ""
+                                    "latitude": "50.433433",
+                                    "longitude": "2.585734"
                                 },
                                 "wind": {
                                     "min": 13,
@@ -131,8 +137,8 @@
                                     "max": "SSW"
                                 },
                                 "coordinates": {
-                                    "latitude": "",
-                                    "longitude": ""
+                                    "latitude": "50.432170",
+                                    "longitude": "2.585635"
                                 },
                                 "camera": "http://foo.bar.com"
                             }

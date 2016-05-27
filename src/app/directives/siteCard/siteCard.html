@@ -1,72 +1,91 @@
 <div class="site-card">
     <div class="infos" ng-click="siteCard.toggleSiteDetails()">
-        <span class="site-label">{{siteCard.siteDatas.label}}</span>
-        <span class="last-update-time">{{siteCard.weatherDatas.lastUpdateTime}}</span>
+        <span class="site-label">{{::siteCard.siteDatas.label}}</span>
+        <span class="last-update-time">{{::siteCard.weatherDatas.lastUpdateTime}}</span>
     </div>
     <div class="infos-details" ng-show="siteCard.showSiteDetails">
         <div class="section level">
             <span><img src="/assets/images/paragliding.svg" class="level-blue"/></span>
         </div>
         <div class="section">
-            <span><i class="ion-android-compass icon"></i>??</span>
+            <span><i class="ion-compass icon"></i>--</span>
         </div>
         <div class="section">
-            <span><i class="ion-flag icon"></i>??</span>
+            <span><i class="ion-flag icon"></i>--</span>
         </div>
         <div class="section">
-            <i class="ion-android-pin icon"></i>
-            <a href="{{siteCard.siteDatas.beacon.url}}" target="_blank">{{siteCard.siteDatas.beacon.label}}</a>
+            <span>
+                <i class="ion-model-s icon"></i>
+                Lat. {{::siteCard.siteDatas.park.coordinates.latitude}} - Lng. {{::siteCard.siteDatas.park.coordinates.longitude}}
+                <a href="http://maps.google.com?daddr={{::siteCard.siteDatas.park.coordinates.latitude}},{{::siteCard.siteDatas.park.coordinates.longitude}}"
+                   target="_blank">
+                    <i class="ion ion-map"></i>
+                </a>
+            </span>
+
+        </div>
+        <div class="section">
+            <i class="ion ion-wifi icon"></i>
+            <a href="{{siteCard.siteDatas.beacon.url}}" target="_blank">{{::siteCard.siteDatas.beacon.label}}</a>
         </div>
         <div class="section take-off" ng-repeat="takeoff in siteCard.siteDatas.takeoffs">
-            <span><i class="fa fa-plane"></i>{{takeoff.label}}</span>
-            <span><i class="ion-android-compass icon"></i>{{takeoff.directions.min}}-{{takeoff.directions.max}}</span>
-            <span><i class="ion-android-locate icon"></i>{{takeoff.coordinates.latitude}} {{takeoff.coordinates.longitude}}<a
-                href="https://www.google.fr/maps/dir/''/50°25'00''N%2002°30'46''E" target="_blank"><i
-                class="fa fa-location-arrow"></i></a></span>
+            <span><i class="ion ion-android-upload icon"></i>{{takeoff.label}}</span>
+            <span><i class="ion ion-compass icon"></i>{{::takeoff.directions.min}}-{{::takeoff.directions.max}}</span>
+            <span><i class="ion ion-flag icon"></i>{{::takeoff.wind.min}}-{{::takeoff.wind.max}}</span>
+            <span><i class="ion ion-android-locate icon"></i>Lat. {{::takeoff.coordinates.latitude}} - Lng. {{::takeoff.coordinates.longitude}}
+                <a href="http://maps.google.com?t=k&q={{::takeoff.coordinates.latitude}},{{::takeoff.coordinates.longitude}}"
+                   target="_blank">
+                    <i class="ion ion-map"></i>
+                </a>
+            </span>
         </div>
         <div class="section landing" ng-repeat="landing in siteCard.siteDatas.landings">
-            <span><i class="fa fa-plane fa-rotate-90"></i>{{landing.label}}</span>
-            <span><i class="ion-android-compass icon"></i>{{landing.directions.min}}-{{landing.directions.max}}</span>
-            <span><i class="ion-android-locate icon"></i>{{landing.coordinates.latitude}} {{landing.coordinates.longitude}}<a
-                href="https://www.google.fr/maps/dir/''/50°25'00''N%2002°30'46''E" target="_blank"><i
-                class="fa fa-location-arrow"></i></a></span>
+            <span><i class="ion ion-android-download icon"></i>{{landing.label}}</span>
+            <span><i
+                class="ion ion-compass icon"></i>Lat. {{::landing.directions.min}}-{{::landing.directions.max}}</span>
+            <span><i class="ion ion-android-locate icon"></i>{{::landing.coordinates.latitude}} - Lng. {{::landing.coordinates.longitude}}
+                <a href="http://maps.google.com?t=k&q={{::landing.coordinates.latitude}},{{::landing.coordinates.longitude}}"
+                   target="_blank">
+                    <i class="ion ion-map"></i>
+                </a>
+            </span>
         </div>
         <div class="section">
-            <span><i class="fa fa-exclamation-triangle"></i></span>
+            <span><i class="ion ion-alert-circled icon"></i>Dangers</span>
                         <span>
-                            <ul ng-repeat="warning in siteCard.siteDatas.warnings">
-                                <li>{{warning}}</li>
+                            <ul>
+                                <li ng-repeat="warning in siteCard.siteDatas.warnings">{{warning}}</li>
                             </ul>
                         </span>
         </div>
         <div class="section">
-            <span><i class="fa fa-info-circle"></i></span>
+            <span><i class="ion ion-information-circled icon"></i>Infos</span>
                         <span>
-                            <ul ng-repeat="info in siteCard.siteDatas.infos">
-                                <li>{{warning}}</li>
+                            <ul>
+                                <li ng-repeat="info in siteCard.siteDatas.infos">{{warning}}</li>
                             </ul>
                         </span>
         </div>
         <div class="section">
                         <span>
-                            <i class="fa fa-video-camera"></i>
-                            <a href="{{takeoff.camera}" target="_blank"
+                            <i class="ion ion-videocamera icon"></i>
+                            <a href="{{takeoff.camera}}" target="_blank"
                                ng-repeat="takeoff in siteCard.siteDatas.takeoffs">{{takeoff.label}}</a>
-                            <a href="{{landing.camera}" target="_blank"
+                            <a href="{{landing.camera}}" target="_blank"
                                ng-repeat="landing in siteCard.siteDatas.landings">{{takeoff.label}}</a>
                         </span>
         </div>
         <div class="section">
                         <span>
-                            <i class="fa fa-picture-o"></i>
-                            <a href="{{takeoff.picture}" target="_blank"
+                            <i class="ion ion-images icon"></i>
+                            <a href="{{takeoff.picture}}" target="_blank"
                                ng-repeat="takeoff in siteCard.siteDatas.takeoffs">{{takeoff.label}}</a>
-                            <a href="{{landing.picture}" target="_blank"
+                            <a href="{{landing.picture}}" target="_blank"
                                ng-repeat="landing in siteCard.siteDatas.landings">{{takeoff.label}}</a>
                         </span>
         </div>
         <div class="section">
-            <i class="fa fa-external-link"></i>
+            <i class="ion ion-link icon"></i>
             <a href="{{link.url}}" target="_blank" ng-repeat="link in siteCard.siteDatas.links">{{link.label}}</a>
         </div>
     </div>

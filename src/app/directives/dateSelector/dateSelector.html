@@ -1,5 +1,5 @@
 <div class="date-selector">
     <div class="previous" ng-click="dateSelector.selectPrevious()" ng-class="dateSelector.hasPrevious() ? 'enable' : 'disable'"><i class="ion-chevron-left"></i></div>
-    <div class="date">{{dateSelector.currentDate}}</div>
+    <div class="date">{{::dateSelector.currentDate}}</div>
     <div class="next" ng-click="dateSelector.selectNext()" ng-class="dateSelector.hasNext() ? 'enable' : 'disable'"><i class="ion-chevron-right"></i></div>
 </div>
