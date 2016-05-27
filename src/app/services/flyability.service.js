@@ -41,7 +41,7 @@
                 flyability.hourlyForecast[hour] = {direction: false, speed: false, gust: false, level: 0};
                 _.each(site.takeoffs, function (takeoff) {
                     flyability.hourlyForecast[hour].direction = flyability.hourlyForecast[hour].direction ||
-                        checkWindDirection(datas.windDirection, takeoff.directions.min, takeoff.directions.max);
+                        checkWindDirection(datas.windDirection, takeoff.direction.min, takeoff.direction.max);
 
                     flyability.hourlyForecast[hour].speed = flyability.hourlyForecast[hour].speed ||
                         checkWindSpeed(datas.windSpeed, datas.windGust, takeoff.wind.min, takeoff.wind.max);
@@ -64,7 +64,7 @@
                 flyability.threeHoursForecast[hour] = {direction: false, speed: false, gust: false, level: 0};
                 _.each(site.takeoffs, function (takeoff) {
                     flyability.threeHoursForecast[hour].direction = flyability.threeHoursForecast[hour].direction ||
-                        checkWindDirection(datas.windDirection, takeoff.directions.min, takeoff.directions.max);
+                        checkWindDirection(datas.windDirection, takeoff.direction.min, takeoff.direction.max);
 
                     flyability.threeHoursForecast[hour].speed = flyability.threeHoursForecast[hour].speed ||
                         checkWindSpeed(datas.windSpeed, takeoff.wind.min, takeoff.wind.max);

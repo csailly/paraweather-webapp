@@ -15,7 +15,8 @@
             scope: {
                 siteDatas: '=',
                 weatherDatas: '=',
-                flyabilityDatas: '='
+                flyabilityDatas: '=',
+                userGeoposition: '='
             },
             bindToController: true
         };

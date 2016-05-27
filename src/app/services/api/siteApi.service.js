@@ -23,6 +23,20 @@
                         "latitude": "50.416804",
                         "longitude": "2.513119"
                     },
+                    "directions": [
+                        {
+                            "min": "W",
+                            "max": "WNW"
+                        },
+                        {
+                            "min": "NW",
+                            "max": "NW"
+                        }
+                    ],
+                    "wind": {
+                        "min": 13,
+                        "max": 25
+                    },
                     "beacon": {
                         "url": "http://www.balisemeteo.com/balise.php?idBalise=166",
                         "label": "La Comté"
@@ -36,7 +50,7 @@
                     "takeoffs": [
                         {
                             "label": "Ouest",
-                            "directions": {
+                            "direction": {
                                 "min": "W",
                                 "max": "WNW"
                             },
@@ -52,7 +66,7 @@
                         },
                         {
                             "label": "Nord-Ouest",
-                            "directions": {
+                            "direction": {
                                 "min": "NW",
                                 "max": "NW"
                             },
@@ -69,7 +83,7 @@
                     "landings": [
                         {
                             "label": "Ouest",
-                            "directions": {
+                            "direction": {
                                 "min": "WNW",
                                 "max": "W"
                             },
@@ -114,7 +128,7 @@
                         "takeoffs": [
                             {
                                 "label": "Sud",
-                                "directions": {
+                                "direction": {
                                     "min": "S",
                                     "max": "SSW"
                                 },
@@ -132,7 +146,7 @@
                         "landings": [
                             {
                                 "label": "Sud",
-                                "directions": {
+                                "direction": {
                                     "min": "S",
                                     "max": "SSW"
                                 },

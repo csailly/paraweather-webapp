@@ -17,6 +17,14 @@
         //---------------------------
 
         function activate() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position){
+                    console.log(position);
+                    vm.userGeoPosition = position;
+                });
+            }
+
+
             $q.all([calendarService.getDates(), siteService.getSites()])
                 .then(function (datas) {
                     vm.dates = datas[0];

@@ -8,16 +8,18 @@
             <span><img src="/assets/images/paragliding.svg" class="level-blue"/></span>
         </div>
         <div class="section">
-            <span><i class="ion-compass icon"></i>--</span>
+            <span><i class="ion-compass icon"></i>
+                <span ng-repeat="direction in siteCard.siteDatas.directions">{{direction.min +"-" + direction.max}},</span>
+            </span>
         </div>
         <div class="section">
-            <span><i class="ion-flag icon"></i>--</span>
+            <span><i class="ion-flag icon"></i>{{::siteCard.siteDatas.wind.min}}-{{::siteCard.siteDatas.wind.max}} km/h</span>
         </div>
         <div class="section">
             <span>
                 <i class="ion-model-s icon"></i>
                 Lat. {{::siteCard.siteDatas.park.coordinates.latitude}} - Lng. {{::siteCard.siteDatas.park.coordinates.longitude}}
-                <a href="http://maps.google.com?daddr={{::siteCard.siteDatas.park.coordinates.latitude}},{{::siteCard.siteDatas.park.coordinates.longitude}}"
+                <a href="http://maps.google.com?saddr={{::siteCard.userGeoposition.coords.latitude}},{{::siteCard.userGeoposition.coords.longitude}}&daddr={{::siteCard.siteDatas.park.coordinates.latitude}},{{::siteCard.siteDatas.park.coordinates.longitude}}"
                    target="_blank">
                     <i class="ion ion-map"></i>
                 </a>
@@ -30,8 +32,8 @@
         </div>
         <div class="section take-off" ng-repeat="takeoff in siteCard.siteDatas.takeoffs">
             <span><i class="ion ion-android-upload icon"></i>{{takeoff.label}}</span>
-            <span><i class="ion ion-compass icon"></i>{{::takeoff.directions.min}}-{{::takeoff.directions.max}}</span>
-            <span><i class="ion ion-flag icon"></i>{{::takeoff.wind.min}}-{{::takeoff.wind.max}}</span>
+            <span><i class="ion ion-compass icon"></i>{{::takeoff.direction.min}}-{{::takeoff.direction.max}}</span>
+            <span><i class="ion ion-flag icon"></i>{{::takeoff.wind.min}}-{{::takeoff.wind.max}} km/h</span>
             <span><i class="ion ion-android-locate icon"></i>Lat. {{::takeoff.coordinates.latitude}} - Lng. {{::takeoff.coordinates.longitude}}
                 <a href="http://maps.google.com?t=k&q={{::takeoff.coordinates.latitude}},{{::takeoff.coordinates.longitude}}"
                    target="_blank">
@@ -42,8 +44,8 @@
         <div class="section landing" ng-repeat="landing in siteCard.siteDatas.landings">
             <span><i class="ion ion-android-download icon"></i>{{landing.label}}</span>
             <span><i
-                class="ion ion-compass icon"></i>Lat. {{::landing.directions.min}}-{{::landing.directions.max}}</span>
-            <span><i class="ion ion-android-locate icon"></i>{{::landing.coordinates.latitude}} - Lng. {{::landing.coordinates.longitude}}
+                class="ion ion-compass icon"></i>{{::landing.direction.min}}-{{::landing.direction.max}}</span>
+            <span><i class="ion ion-android-locate icon"></i>Lat. {{::landing.coordinates.latitude}} - Lng. {{::landing.coordinates.longitude}}
                 <a href="http://maps.google.com?t=k&q={{::landing.coordinates.latitude}},{{::landing.coordinates.longitude}}"
                    target="_blank">
                     <i class="ion ion-map"></i>
