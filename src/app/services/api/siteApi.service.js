@@ -95,8 +95,12 @@
                         }
                     ],
                     "warnings": [
-                        "Attention aux moutons",
-                        "Beaware zobbie la mouche"
+                        "Le site est petit et très fréquenté."
+                    ],
+                    "infos": [
+                        "Cross possible jusqu'à Olhain.",
+                        "Interdit au-dessus de 1350m (TMA 3.1 Lille- classe D).",
+                        "Le club de Vol à Voile de Arras est susceptible de demander une désactivation de la TMA 3.1. Pour savoir si la zone TMA 3.1 est désactivée: tel de l'ATIS de Lille Lesquin : 03 20 16 19 54"
                     ],
                     "links": [
                         {
