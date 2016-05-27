@@ -4,7 +4,7 @@
     angular.module('siteWeather.views')
         .controller('MainController', MainController);
 
-    function MainController($log, $q, $state, $stateParams, weatherService, siteService, calendarService, flyabilityService) {
+    function MainController($scope, $log, $q, $state, $stateParams, weatherService, siteService, calendarService, flyabilityService) {
         var vm = this;
 
         vm.showSiteDetails = false;
@@ -24,6 +24,12 @@
                 });
             }
 
+            vm.day = $state.params.day;
+
+            if (vm.day <0 || vm.day > 6) {
+                $state.go('root.day', {day: 0}, {reload: true});
+                return;
+            }
 
             $q.all([calendarService.getDates(), siteService.getSites()])
                 .then(function (datas) {
@@ -47,6 +53,23 @@
                     });
 
                 });
+
+            $scope.$on('dateSelectionEvent', function(event, data){
+                $state.go('root.day', {day: data});
+
+                _.each(vm.sites, function (site) {
+                    var date = moment().add(data, 'days').format('YYYYMMDD');
+                    weatherService.getByDateAndLocation(date, site.coordinates.latitude, site.coordinates.longitude)
+                        .then(function (weather) {
+                            vm.siteWeather[site.id] = weather;
+                        })
+                        .then(function () {
+                            vm.siteFlyability[site.id] = flyabilityService.getFlyability(site, vm.siteWeather[site.id]);
+                        });
+                });
+
+
+            });
         }
 
         function toggleSiteDetails() {

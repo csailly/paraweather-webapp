@@ -43,7 +43,7 @@
                     },
                     "park": {
                         "coordinates": {
-                            "latitude": " 50.415904",
+                            "latitude": "50.415904",
                             "longitude": "2.511599"
                         }
                     },

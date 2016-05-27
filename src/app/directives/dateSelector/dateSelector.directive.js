@@ -12,7 +12,7 @@
             controller: 'DateSelectorController',
             controllerAs : 'dateSelector',
             scope: {
-                dates : '='
+                currentDay : '='
             },
             bindToController : true
         };

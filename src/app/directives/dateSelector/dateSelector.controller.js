@@ -4,7 +4,7 @@
     angular.module('siteWeather.directives')
         .controller('DateSelectorController', dateSelectorController);
 
-    function dateSelectorController($log, $state, $stateParams) {
+    function dateSelectorController($scope, $log) {
         var vm = this;
 
         vm.hasPrevious = hasPrevious;
@@ -17,38 +17,38 @@
 
         //---------------------
         function activate() {
-            $log.debug("Init dateSelectorController with dates :", vm.dates);
-            if (vm.dates[$stateParams.day]) {
-                vm.currentDate = moment().add($stateParams.day, 'days').format('dddd DD/MM/YYYY');
-            } else {
+            $log.debug("Init dateSelectorController with dates :", vm.currentDay);
+            if (vm.currentDay < 0 || vm.currentDay > 6) {
                 $log.info("Invalid day param, use default one");
-                reload(0);
+                vm.currentDay = 0;
             }
+            vm.currentDate = moment().add(vm.currentDay, 'days').format('dddd DD/MM/YYYY');
         }
 
         function hasPrevious() {
-            return vm.dates[parseInt($stateParams.day) - 1];
+            return vm.currentDay > 0;
         }
 
         function hasNext() {
-            return vm.dates[parseInt($stateParams.day) + 1];
+            return vm.currentDay < 6;
         }
 
         function selectPrevious() {
             if (hasPrevious()) {
-                reload(parseInt($stateParams.day) - 1);
+                vm.currentDay--;
+                vm.currentDate = moment().add(vm.currentDay, 'days').format('dddd DD/MM/YYYY');
+                $scope.$emit('dateSelectionEvent', vm.currentDay);
             }
         }
 
         function selectNext() {
             if (hasNext()) {
-                reload(parseInt($stateParams.day) + 1);
+                vm.currentDay++;
+                vm.currentDate = moment().add(vm.currentDay, 'days').format('dddd DD/MM/YYYY');
+                $scope.$emit('dateSelectionEvent', vm.currentDay);
             }
         }
 
-        function reload(day) {
-            $state.go('root.day', {day: day}, {reload: true});
-        }
     }
 
 })();
