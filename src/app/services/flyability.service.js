@@ -70,7 +70,7 @@
                         checkWindSpeed(datas.windSpeed, takeoff.wind.min, takeoff.wind.max);
 
                     flyability.threeHoursForecast[hour].gust = flyability.threeHoursForecast[hour].gust ||
-                        checkWindGust(datas.windGust, takeoff.wind.min, takeoff.wind.max);
+                        checkWindGust(datas.windGust, takeoff.wind.max);
                 });
 
                 if (flyability.threeHoursForecast[hour].direction) {
